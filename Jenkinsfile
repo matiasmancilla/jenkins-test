@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        // overwriting default cache directory
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    }
     agent {
         docker {
             image 'node:6-alpine'
