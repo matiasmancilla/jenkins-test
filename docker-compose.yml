@@ -8,7 +8,7 @@ services:
     links:
       - postgresql
       - redis
-    command: sh -c "cd /code && npm install && npm run dev"
+    command: sh -c "cd /code && npm install"
   postgresql:
     image: postgres
     ports:
