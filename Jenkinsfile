@@ -66,7 +66,7 @@ pipeline {
         }
         stage('Running tests') {
             steps {
-                sh 'curl http://localhost:3000'
+                sh 'curl http://localhost:4000'
             }
         }
     }
