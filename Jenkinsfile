@@ -56,8 +56,7 @@ pipeline {
         }
         stage('Starting containers') {
             steps {
-                sh 'docker-compose up'
-                sleep(time: 30, unit: "SECONDS")
+                sh 'docker-compose up -d'
             }
         }
         stage('See containers') {
