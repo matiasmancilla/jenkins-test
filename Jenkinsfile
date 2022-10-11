@@ -56,8 +56,18 @@ pipeline {
         }
         stage('Starting containers') {
             steps {
-                sh 'docker-compose up --wait --build --force-recreate --abort-on-container-exit'
+                sh 'docker-compose up -d'
+                sleep(time: 1, unit: "MINUTES")
+            }
+        }
+        stage('See containers') {
+            steps {
                 sh 'docker-compose ps'
+            }
+        }
+        stage('Running tests') {
+            steps {
+                sh 'curl http://localhost:3000'
             }
         }
     }
